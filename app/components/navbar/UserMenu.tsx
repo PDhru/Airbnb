@@ -5,13 +5,16 @@ import Avtar from "../Avtar";
 import { useCallback, useState } from "react";
 import MenuItem from "./MenuItem";
 import useRegisterModal from "@/app/hooks/useRegisterModal";
+import useLoginModal from "../modals/LoginModal";
 
 const UserMenu = () => {
   const registerModal = useRegisterModal();
+  const loginModal = useLoginModal();
   const [isopen, setIsOpen] = useState(false)
   const toggleOpen = useCallback(() => {
     setIsOpen((value) => !value);
   }, [])
+
   return (
     <div className="relative">
       <div className="flex flex-row items-center gap-3">
